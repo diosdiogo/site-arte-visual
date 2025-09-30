@@ -1,0 +1,50 @@
+.hero {
+  background: linear-gradient(to right, #141E30, #243B55);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+
+  .highlight {
+    color: #ff3c3c;
+    font-weight: bold;
+  }
+
+  button {
+    margin-top: 20px;
+  }
+}
+
+.about, .features, .portfolio, .delivery, .stats {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.features .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.portfolio-swiper {
+  margin-top: 20px;
+
+  .portfolio-item {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.delivery .highlight,
+.stats .highlight {
+  color: #ff3c3c;
+  font-weight: bold;
+}
+
+footer {
+  background: #141E30;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
