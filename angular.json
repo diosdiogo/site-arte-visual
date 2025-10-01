@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/site-arte-visual",
+            "outputPath": "dist/site-arte-visual/browser",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -51,7 +51,8 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "baseHref": "/site-arte-visual/"
             },
             "development": {
               "optimization": false,
@@ -93,9 +94,6 @@
             ],
             "styles": [
               "@angular/material/prebuilt-themes/azure-blue.css",
-              "src/styles.scss"
-            ],
-            "styles": [
               "src/styles.scss",
               "node_modules/swiper/swiper-bundle.css"
             ]

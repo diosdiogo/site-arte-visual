@@ -1,36 +1,31 @@
-name: Deploy Angular to GitHub Pages
+name: Deploy Angular App to GitHub Pages
 
 on:
   push:
     branches:
-      - master   # toda vez que fizer push no master
+      - master  # toda vez que fizer push na master, vai rodar o deploy
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # Clona o repositório
-      - name: Checkout
-        uses: actions/checkout@v3
+      - name: Checkout source code
+        uses: actions/checkout@v4
 
-      # Configura Node
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: '20'
 
-      # Instala dependências
       - name: Install dependencies
         run: npm install
 
-      # Build Angular
-      - name: Build Angular
-        run: npm run build -- --configuration production --base-href "https://diosdiogo.github.io/site-arte-visual/"
+      - name: Build Angular app
+        run: npm run build -- --configuration production --base-href="/site-arte-visual/"
 
-      # Deploy para GitHub Pages
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages    # branch que será usada no Pages
-          folder: dist/site-arte-visual  # pasta de build gerada pelo Angular
+          branch: gh-pages
+          folder: dist/site-arte-visual/browser
